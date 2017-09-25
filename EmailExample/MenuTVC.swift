@@ -114,7 +114,6 @@ class MenuTVC: UITableViewController {
         //1. which button got pressed
         //2. up-to-date data
         
-        print("In prepare")
     }
     
 
