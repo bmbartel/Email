@@ -49,6 +49,7 @@ class RootTVC: UITableViewController {
         //I want the detail view controller to update based on the row that I selected
         
         let selectedEmail = emails[indexPath.row]
+        // Read the enail in the current row that was selected
         delegate?.read(email: selectedEmail)
     }
 
