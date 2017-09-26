@@ -13,10 +13,12 @@ protocol CellSelectedDelegate {
 }
 
 class RootTVC: UITableViewController {
+
     
     var emails = [Email]()
     var delegate: CellSelectedDelegate?
-
+    var menuDelegate : ViewController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,8 +51,11 @@ class RootTVC: UITableViewController {
         //I want the detail view controller to update based on the row that I selected
         
         let selectedEmail = emails[indexPath.row]
-        // Read the enail in the current row that was selected
+        // Read the email in the current row that was selected
         delegate?.read(email: selectedEmail)
+        
+       
+        
     }
 
     

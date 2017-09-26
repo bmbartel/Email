@@ -15,6 +15,7 @@
 		A0856B131F7091F1008DF071 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0856B121F7091F1008DF071 /* Email.swift */; };
 		A0856B151F709548008DF071 /* RootTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0856B141F709548008DF071 /* RootTVC.swift */; };
 		A0856B191F7336BB008DF071 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0856B181F7336BB008DF071 /* MenuTVC.swift */; };
+		CA945D1B1F7A338E006985EE /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA945D1A1F7A338E006985EE /* DetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A0856B121F7091F1008DF071 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		A0856B141F709548008DF071 /* RootTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTVC.swift; sourceTree = "<group>"; };
 		A0856B181F7336BB008DF071 /* MenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
+		CA945D1A1F7A338E006985EE /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				A0856B001F709103008DF071 /* AppDelegate.swift */,
 				A0856B121F7091F1008DF071 /* Email.swift */,
+				CA945D1A1F7A338E006985EE /* DetailVC.swift */,
 				A0856B021F709103008DF071 /* ViewController.swift */,
 				A0856B181F7336BB008DF071 /* MenuTVC.swift */,
 				A0856B141F709548008DF071 /* RootTVC.swift */,
@@ -150,6 +153,7 @@
 				A0856B151F709548008DF071 /* RootTVC.swift in Sources */,
 				A0856B011F709103008DF071 /* AppDelegate.swift in Sources */,
 				A0856B131F7091F1008DF071 /* Email.swift in Sources */,
+				CA945D1B1F7A338E006985EE /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,19 +8,24 @@
 
 import UIKit
 
-class MenuTVC: UITableViewController {
+
+class MenuTVC: UITableViewController{
     
     var dataDictionary: [String:Array<Email>] = [:]
     var selectedRow = ""
-
+    var delegate: ViewController? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        
+        // Use this for edditing and deleting.
+         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +60,6 @@ class MenuTVC: UITableViewController {
         //TODO: react to user selecting row
         //I want the detail view controller to update based on the row that I selected
         
-        print("In didSelectRowAt")
         //TODO: get cell information
         let keywords = Array(dataDictionary.keys)
         selectedRow = keywords[indexPath.row]
@@ -110,7 +114,7 @@ class MenuTVC: UITableViewController {
         
         let destVC = segue.destination as! RootTVC
         destVC.emails = dataDictionary[selectedRow]!
-        
+        destVC.menuDelegate = self.delegate!
         //1. which button got pressed
         //2. up-to-date data
         
