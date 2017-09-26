@@ -53,7 +53,7 @@ class RootTVC: UITableViewController {
         let selectedEmail = emails[indexPath.row]
         // Read the email in the current row that was selected
         delegate?.read(email: selectedEmail)
-        
+        menuDelegate?.read(email: selectedEmail)
        
         
     }
