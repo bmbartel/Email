@@ -24,7 +24,7 @@ class MenuTVC: UITableViewController{
         //Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         
         // Use this for edditing and deleting.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
     }
 
@@ -63,7 +63,6 @@ class MenuTVC: UITableViewController{
         //TODO: get cell information
         let keywords = Array(dataDictionary.keys)
         selectedRow = keywords[indexPath.row]
-        
         //call segue manually
         performSegue(withIdentifier: "cellSelected", sender: self)
     }
@@ -115,6 +114,17 @@ class MenuTVC: UITableViewController{
         let destVC = segue.destination as! RootTVC
         destVC.emails = dataDictionary[selectedRow]!
         destVC.menuDelegate = self.delegate!
+        
+//        var inboxConditional = false
+//        if selectedRow == "Inbox"
+//        {
+//           var inboxConditional = true
+//        }
+//        else{
+//          var inboxConditional = false
+//        }
+//        destVC.inboxConditional = inboxConditional
+        
         //1. which button got pressed
         //2. up-to-date data
         

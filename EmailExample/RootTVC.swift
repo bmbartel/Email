@@ -18,6 +18,7 @@ class RootTVC: UITableViewController {
     var emails = [Email]()
     var delegate: CellSelectedDelegate?
     var menuDelegate : ViewController? = nil
+    // var inboxConditional = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,8 @@ class RootTVC: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+         self.navigationItem.rightBarButtonItem = self.editButtonItem
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +54,6 @@ class RootTVC: UITableViewController {
         
         let selectedEmail = emails[indexPath.row]
         // Read the email in the current row that was selected
-        delegate?.read(email: selectedEmail)
         menuDelegate?.read(email: selectedEmail)
        
         
