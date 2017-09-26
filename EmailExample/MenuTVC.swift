@@ -115,15 +115,15 @@ class MenuTVC: UITableViewController{
         destVC.emails = dataDictionary[selectedRow]!
         destVC.menuDelegate = self.delegate!
         
-//        var inboxConditional = false
-//        if selectedRow == "Inbox"
-//        {
-//           var inboxConditional = true
-//        }
-//        else{
-//          var inboxConditional = false
-//        }
-//        destVC.inboxConditional = inboxConditional
+        var inboxConditional = false
+        if selectedRow == "Inbox"
+        {
+        inboxConditional = true
+        }
+        else{
+        inboxConditional = false
+        }
+        destVC.inboxConditional = inboxConditional
         
         //1. which button got pressed
         //2. up-to-date data

@@ -18,17 +18,18 @@ class RootTVC: UITableViewController {
     var emails = [Email]()
     var delegate: CellSelectedDelegate?
     var menuDelegate : ViewController? = nil
-    // var inboxConditional = false
+    var inboxConditional = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        if inboxConditional == true
+        {
          self.navigationItem.rightBarButtonItem = self.editButtonItem
-
+        }
     }
 
     override func didReceiveMemoryWarning() {
