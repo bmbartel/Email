@@ -146,7 +146,7 @@ class MenuTVC: UITableViewController{
         
         //Do the same thing for the sent folder
         var sentConditional = false
-        if selectedRow == "Inbox"
+        if selectedRow == "Sent"
         {
             sentConditional = true
         }

@@ -37,13 +37,15 @@ class RootTVC: UITableViewController {
         {
             // Adds an edit button.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+            self.editButtonItem.title = "Edit"
         }
         
         // Layout for adjusting the button layout when the sent tab is selected.
-        if sentConditional == true
+        else if sentConditional == true
         {
-//            self.navigationItem.rightBarButtonItem = self.editButtonItem
-//            self.editButtonItem.title = "+"
+            // This plus button goes away after the first run. Need to have a way of making this of style .insert
+            self.navigationItem.rightBarButtonItem = self.editButtonItem
+            self.editButtonItem.title = "+"
 
             
             // Add a button which will append an email to emails when pressed. I cant figure out how to get a button to add, using Bar Button Item type, without it messing up my edit button.
@@ -104,11 +106,10 @@ class RootTVC: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            
+            // First we need to move the selected row to the trash section of datadictionary. Call a protocol? I need to create a variable that calls the calls the Menu VC. Then do that variable.IndexPath// Delete the row from the data source
+            
             // Delete the row from the data source
-            
-            // First we need to move the selected row to the trash section of datadictionary. Call a protocol? I need to create a variable that calls the calls the Menu VC. Then do that variable.IndexPath
-            
-            
             
             // This line allows for the row selected to be deleted from our email file.
              emails.remove(at: indexPath.row)
@@ -116,8 +117,10 @@ class RootTVC: UITableViewController {
             // This line then deletes the row from the table viewer
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
-//            let test = Email(sender: "asu@asu.edu", subject: "Spam", contents: "Spam")
-//            emails.append(test)
+            tableView.insertRows(at: [indexPath], with: .fade)
+            // This is how I would attempt to append emails to the sent folder. 
+                        let test = Email(sender: "From: asu@asu.edu", recipient: "To:JoeSmoe@asu.edu", subject: "Spam", contents: "Spam")
+                        emails.append(test)
         }
     }
     

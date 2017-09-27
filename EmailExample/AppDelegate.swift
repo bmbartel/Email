@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navVC = splitVC.viewControllers.first as! UINavigationController
         let menuTVC = navVC.viewControllers[0] as! MenuTVC
         
-       // Create Function to pull the data from Insert.swift
+       // Create Function to pull the data from Insert.swift?
         
       
         // Data Dictionary which contains all of the emails. Gets accessed by the menu table view controller which is then segued down to the root.
