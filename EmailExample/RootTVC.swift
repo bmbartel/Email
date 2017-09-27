@@ -12,10 +12,6 @@ protocol CellSelectedDelegate {
     func read(email: Email)
 }
 
-protocol SendToTrash
-{
-    
-}
 
 
 class RootTVC: UITableViewController {
@@ -25,6 +21,8 @@ class RootTVC: UITableViewController {
     var delegate: CellSelectedDelegate?
     var menuDelegate : ViewController? = nil
     var inboxConditional = false
+  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,7 +93,7 @@ class RootTVC: UITableViewController {
             // Delete the row from the data source
             
             // First we need to move the selected row to the trash section of datadictionary. Call a protocol?
-            
+
             
             // This line allows for the row selected to be deleted from our email file.
             emails.remove(at: indexPath.row)

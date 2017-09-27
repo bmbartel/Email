@@ -115,6 +115,8 @@ class MenuTVC: UITableViewController{
         destVC.emails = dataDictionary[selectedRow]!
         destVC.menuDelegate = self.delegate!
         
+        
+        // Set up a conditional to only have this edit button pop up for the inbox type.
         var inboxConditional = false
         if selectedRow == "Inbox"
         {

@@ -27,11 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         menuTVC.dataDictionary = ["Inbox":[Email(sender: "fellow.student@asu.edu", subject: "Project Question", contents: "Hi help me please"),Email(sender: "bmbartel@asu.edu", subject: "Hi", contents: "Testing out email for the first time. Howdy.") ], "Sent":[Email(sender: "prof@asu.edu", subject: "Homework", contents: "Hi turn it in please")], "Trash":[Email(sender: "alert@asu.edu", subject: "Bees", contents: "Hi help me please there are bees")]]
         
-        /*
-        rootTVC.emails.append(Email(sender: "fellow.student@asu.edu", subject: "Project Question", contents: "Hi help me please"))
-        rootTVC.emails.append(Email(sender: "prof@asu.edu", subject: "Homework", contents: "Hi turn it in please"))
-        rootTVC.emails.append(Email(sender: "alert@asu.edu", subject: "Bees", contents: "Hi help me please there are bees"))
-        */
         let detailVC = splitVC.viewControllers.last as! ViewController
         menuTVC.delegate = detailVC
        
