@@ -12,7 +12,7 @@ class ViewController: UIViewController, CellSelectedDelegate {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var senderLabel: UILabel!
     @IBOutlet weak var contentsLabel: UILabel!
-
+    @IBOutlet weak var recipientLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -28,6 +28,7 @@ class ViewController: UIViewController, CellSelectedDelegate {
     func read(email: Email) {
         //read this email
         titleLabel.text = email.subject
+        recipientLabel.text = email.recipient
         senderLabel.text = email.sender
         contentsLabel.text = email.contents
     }
