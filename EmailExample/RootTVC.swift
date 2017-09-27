@@ -22,11 +22,14 @@ class RootTVC: UITableViewController {
     var menuDelegate : ViewController? = nil
     var inboxConditional = false
     var sentConditional = false
-    
+    var selectedEmailKey = ""
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Display in the root TVC if the user is looking at the inbox, sent, or trash.
+        navigationItem.title = selectedEmailKey
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

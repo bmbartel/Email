@@ -70,6 +70,7 @@ class MenuTVC: UITableViewController{
         performSegue(withIdentifier: "cellSelected", sender: self)
     }
 
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -116,7 +117,7 @@ class MenuTVC: UITableViewController{
         let destVC = segue.destination as! RootTVC
         destVC.emails = dataDictionary[selectedRow]!
         destVC.menuDelegate = self.delegate!
-        
+        destVC.selectedEmailKey = selectedRow
         // Set up a conditional to only have this edit button pop up for the inbox type.
         var inboxConditional = false
         if selectedRow == "Inbox"
@@ -140,6 +141,6 @@ class MenuTVC: UITableViewController{
         destVC.sentConditional = sentConditional
         
     }
-    
+
 
 }
