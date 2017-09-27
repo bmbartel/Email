@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -23,8 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navVC = splitVC.viewControllers.first as! UINavigationController
         let menuTVC = navVC.viewControllers[0] as! MenuTVC
         
-        //let test = Email(sender: "asu@asu.edu", subject: "Spam", contents: "Spam")
+       // Create Function to pull the data from Insert.swift
         
+      
+        // Data Dictionary which contains all of the emails. Gets accessed by the menu table view controller which is then segued down to the root.
         menuTVC.dataDictionary = ["Inbox":[Email(sender: "From: fellow.student@asu.edu", recipient: "To: bmbartel@asu.edu", subject: "Project Question", contents: "Hi help me please"),Email(sender: "From: you@asu.edu", recipient: "To: bmbartel@asu.edu", subject: "Hello there", contents: "Testing out email for the first time. Howdy.") ], "Sent":[Email(sender: "From: prof@asu.edu", recipient: "To: teacher@asu.edu", subject: "Homework", contents: "Hi turn it in please")], "Trash":[Email(sender: "From: alert@asu.edu", recipient: "To: other@asu.edu", subject: "Bees", contents: "Hi help me please there are bees")]]
         
         let detailVC = splitVC.viewControllers.last as! ViewController

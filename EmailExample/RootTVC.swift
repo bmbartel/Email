@@ -30,16 +30,17 @@ class RootTVC: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // The following conditional occurs when the inbox row is selected in the MenuRVC
         if inboxConditional == true
         {
+            // Adds an edit button.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         }
         
         // Layout for adjusting the button layout when the sent tab is selected.
         if sentConditional == true
         {
-            // Add a button which will append an email to emails when pressed. I cant figure out how to get a button to add, using Bar Button Item type without it messing up my edit button.
+            // Add a button which will append an email to emails when pressed. I cant figure out how to get a button to add, using Bar Button Item type, without it messing up my edit button.
     
         }
     }
@@ -63,9 +64,8 @@ class RootTVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO: react to user selecting row
-        //I want the detail view controller to update based on the row that I selected
-        
+       
+        // Sets a variable equal to the current email that the user is looking at so that it can later be displayed.
         let selectedEmail = emails[indexPath.row]
         // Read the email in the current row that was selected
         menuDelegate?.read(email: selectedEmail)

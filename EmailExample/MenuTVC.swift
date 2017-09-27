@@ -11,7 +11,6 @@ import UIKit
 
 class MenuTVC: UITableViewController{
     
-    
     var dataDictionary: [String:Array<Email>] = [:]
     var selectedRow = ""
     var delegate: ViewController? = nil
@@ -49,7 +48,6 @@ class MenuTVC: UITableViewController{
         return 3
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
 
@@ -112,13 +110,12 @@ class MenuTVC: UITableViewController{
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
         let destVC = segue.destination as! RootTVC
         destVC.emails = dataDictionary[selectedRow]!
         destVC.menuDelegate = self.delegate!
-        
         
         // Set up a conditional to only have this edit button pop up for the inbox type.
         var inboxConditional = false
@@ -130,7 +127,6 @@ class MenuTVC: UITableViewController{
         inboxConditional = false
         }
         destVC.inboxConditional = inboxConditional
-        
         
         //Do the same thing for the sent folder
         var sentConditional = false
