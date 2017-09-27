@@ -14,17 +14,16 @@ protocol CellSelectedDelegate {
 
 
 class RootTVC: UITableViewController {
-
-
     
     var emails = [Email]()
+    // Gives access to the protocol as a variable
     var delegate: CellSelectedDelegate?
     var menuDelegate : ViewController? = nil
     var inboxConditional = false
     var sentConditional = false
     var selectedEmailKey = ""
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Display in the root TVC if the user is looking at the inbox, sent, or trash.
@@ -43,6 +42,10 @@ class RootTVC: UITableViewController {
         // Layout for adjusting the button layout when the sent tab is selected.
         if sentConditional == true
         {
+//            self.navigationItem.rightBarButtonItem = self.editButtonItem
+//            self.editButtonItem.title = "+"
+
+            
             // Add a button which will append an email to emails when pressed. I cant figure out how to get a button to add, using Bar Button Item type, without it messing up my edit button.
     
         }
@@ -103,7 +106,8 @@ class RootTVC: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             
-            // First we need to move the selected row to the trash section of datadictionary. Call a protocol?
+            // First we need to move the selected row to the trash section of datadictionary. Call a protocol? I need to create a variable that calls the calls the Menu VC. Then do that variable.IndexPath
+            
             
             
             // This line allows for the row selected to be deleted from our email file.

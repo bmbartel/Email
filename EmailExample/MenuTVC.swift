@@ -15,6 +15,15 @@ class MenuTVC: UITableViewController{
     var selectedRow = ""
     var delegate: ViewController? = nil
     
+    // below variable is intended to be used when pulling the variable indexPath from RootTVC.
+    var indexPath: IndexPath? = nil
+    
+    // Use this function to read the variable from RootTVC in MenuTVC
+//    func fromRoot(indexPath: IndexPath) -> IndexPath
+//    {
+//        return indexPath
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -112,12 +121,18 @@ class MenuTVC: UITableViewController{
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let destVC = segue.destination as! RootTVC
+        
+        
         destVC.emails = dataDictionary[selectedRow]!
-        destVC.menuDelegate = self.delegate!
+        // Set the menuDelegate variable in RootTVC to be the current delegate (VC). Attempting to give the RootTVC a link to the data in MenuTVC so that we can update the dataDictionary.
+        destVC.menuDelegate = self.delegate
+        
         destVC.selectedEmailKey = selectedRow
+        
         // Set up a conditional to only have this edit button pop up for the inbox type.
         var inboxConditional = false
         if selectedRow == "Inbox"
