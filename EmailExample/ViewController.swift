@@ -13,6 +13,8 @@ class ViewController: UIViewController, CellSelectedDelegate {
     @IBOutlet weak var senderLabel: UILabel!
     @IBOutlet weak var contentsLabel: UILabel!
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

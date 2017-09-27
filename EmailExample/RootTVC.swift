@@ -13,7 +13,6 @@ protocol CellSelectedDelegate {
 }
 
 
-
 class RootTVC: UITableViewController {
 
     
@@ -93,15 +92,17 @@ class RootTVC: UITableViewController {
             // Delete the row from the data source
             
             // First we need to move the selected row to the trash section of datadictionary. Call a protocol?
-
+            
             
             // This line allows for the row selected to be deleted from our email file.
-            emails.remove(at: indexPath.row)
+             emails.remove(at: indexPath.row)
+            
             // This line then deletes the row from the table viewer
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+//            let test = Email(sender: "asu@asu.edu", subject: "Spam", contents: "Spam")
+//            emails.append(test)
+        }
     }
     
 

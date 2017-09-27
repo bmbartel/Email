@@ -15,6 +15,7 @@
 		A0856B131F7091F1008DF071 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0856B121F7091F1008DF071 /* Email.swift */; };
 		A0856B151F709548008DF071 /* RootTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0856B141F709548008DF071 /* RootTVC.swift */; };
 		A0856B191F7336BB008DF071 /* MenuTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0856B181F7336BB008DF071 /* MenuTVC.swift */; };
+		CA945D1F1F7B7F09006985EE /* Insert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA945D1E1F7B7F09006985EE /* Insert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A0856B121F7091F1008DF071 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		A0856B141F709548008DF071 /* RootTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTVC.swift; sourceTree = "<group>"; };
 		A0856B181F7336BB008DF071 /* MenuTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTVC.swift; sourceTree = "<group>"; };
+		CA945D1E1F7B7F09006985EE /* Insert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				A0856B021F709103008DF071 /* ViewController.swift */,
 				A0856B181F7336BB008DF071 /* MenuTVC.swift */,
 				A0856B141F709548008DF071 /* RootTVC.swift */,
+				CA945D1E1F7B7F09006985EE /* Insert.swift */,
 				A0856B041F709104008DF071 /* Main.storyboard */,
 				A0856B071F709104008DF071 /* Assets.xcassets */,
 				A0856B091F709104008DF071 /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA945D1F1F7B7F09006985EE /* Insert.swift in Sources */,
 				A0856B031F709103008DF071 /* ViewController.swift in Sources */,
 				A0856B191F7336BB008DF071 /* MenuTVC.swift in Sources */,
 				A0856B151F709548008DF071 /* RootTVC.swift in Sources */,

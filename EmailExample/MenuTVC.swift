@@ -11,6 +11,7 @@ import UIKit
 
 class MenuTVC: UITableViewController{
     
+    
     var dataDictionary: [String:Array<Email>] = [:]
     var selectedRow = ""
     var delegate: ViewController? = nil
@@ -18,6 +19,9 @@ class MenuTVC: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Add a title at the top to always display my email address in the menu controller.
+        navigationItem.title = "bmbartel@asu.edu"
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -63,10 +67,10 @@ class MenuTVC: UITableViewController{
         //TODO: get cell information
         let keywords = Array(dataDictionary.keys)
         selectedRow = keywords[indexPath.row]
+        
         //call segue manually
         performSegue(withIdentifier: "cellSelected", sender: self)
     }
- 
 
     /*
     // Override to support conditional editing of the table view.
