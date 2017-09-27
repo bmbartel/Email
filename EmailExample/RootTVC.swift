@@ -15,14 +15,16 @@ protocol CellSelectedDelegate {
 
 class RootTVC: UITableViewController {
 
+
     
     var emails = [Email]()
     var delegate: CellSelectedDelegate?
     var menuDelegate : ViewController? = nil
     var inboxConditional = false
-  
+    var sentConditional = false
     
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -31,10 +33,17 @@ class RootTVC: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         if inboxConditional == true
         {
-            self.navigationItem.rightBarButtonItem = self.editButtonItem
-            
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        }
+        
+        // Layout for adjusting the button layout when the sent tab is selected.
+        if sentConditional == true
+        {
+            // Add a button which will append an email to emails when pressed. I cant figure out how to get a button to add, using Bar Button Item type without it messing up my edit button.
+    
         }
     }
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

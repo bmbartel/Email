@@ -105,7 +105,7 @@
             </objects>
             <point key="canvasLocation" x="1253" y="-485"/>
         </scene>
-        <!--RootTVC-->
+        <!--Email-->
         <scene sceneID="1jG-1N-zYs">
             <objects>
                 <tableViewController id="L9c-r4-5g4" customClass="RootTVC" customModule="EmailExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -144,6 +144,9 @@
                             <outlet property="delegate" destination="L9c-r4-5g4" id="nUy-yI-OWk"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Email" id="Gl0-zk-02J"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ax-63-TMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

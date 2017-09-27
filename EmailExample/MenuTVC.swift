@@ -131,8 +131,17 @@ class MenuTVC: UITableViewController{
         }
         destVC.inboxConditional = inboxConditional
         
-        //1. which button got pressed
-        //2. up-to-date data
+        
+        //Do the same thing for the sent folder
+        var sentConditional = false
+        if selectedRow == "Inbox"
+        {
+            sentConditional = true
+        }
+        else{
+            sentConditional = false
+        }
+        destVC.sentConditional = sentConditional
         
     }
     
