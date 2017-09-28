@@ -12,12 +12,18 @@ protocol CellSelectedDelegate {
     func read(email: Email)
 }
 
+protocol DataUpdateDelegate {
+    func update(action: String, context: String, email: Email, indexPath: IndexPath)
+    func addEmail(email: Email)
+}
+
 
 class RootTVC: UITableViewController {
     
     var emails = [Email]()
     // Gives access to the protocol as a variable
     var delegate: CellSelectedDelegate?
+    var dataUpdateDelegate: DataUpdateDelegate?
     var menuDelegate : ViewController? = nil
     var inboxConditional = false
     var sentConditional = false
@@ -44,7 +50,7 @@ class RootTVC: UITableViewController {
         else if sentConditional == true
         {
             // This plus button goes away after the first run. Need to have a way of making this of style .insert
-            self.navigationItem.rightBarButtonItem = self.editButtonItem
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(sendEmail))
             self.editButtonItem.title = "+"
 
             
@@ -112,8 +118,8 @@ class RootTVC: UITableViewController {
             // Delete the row from the data source
             
             // This line allows for the row selected to be deleted from our email file.
-             emails.remove(at: indexPath.row)
-            
+             let deletedEmail = emails.remove(at: indexPath.row)
+            dataUpdateDelegate?.update(action: "delete", context: selectedEmailKey, email: deletedEmail, indexPath: indexPath)
             // This line then deletes the row from the table viewer
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
@@ -121,10 +127,16 @@ class RootTVC: UITableViewController {
             // This is how I would attempt to append emails to the sent folder. 
                         let test = Email(sender: "From: asu@asu.edu", recipient: "To:JoeSmoe@asu.edu", subject: "Spam", contents: "Spam")
                         emails.append(test)
+
         }
     }
     
-
+    func sendEmail() {
+        let NewEmail = Email(sender: "Sender", recipient: "Recipient", subject: "Subject", contents: "contents")
+        dataUpdateDelegate?.addEmail(email: NewEmail)
+        tableView.reloadData()
+    }
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

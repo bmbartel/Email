@@ -9,11 +9,38 @@
 import UIKit
 
 
-class MenuTVC: UITableViewController{
+class MenuTVC: UITableViewController, DataUpdateDelegate {
     
     var dataDictionary: [String:Array<Email>] = [:]
     var selectedRow = ""
     var delegate: ViewController? = nil
+    
+    func addEmail(email: Email) {
+        var sentEmails = dataDictionary["Sent"]
+        sentEmails?.append(email)
+        dataDictionary["Sent"] = sentEmails
+    }
+    
+    func update(action: String, context: String, email: Email, indexPath: IndexPath)
+    {
+        switch action {
+            case "add":
+
+                print("in add")
+            case "delete":
+                var inboxEmails = dataDictionary["Inbox"]
+                let deletedEmail =  inboxEmails?.remove(at: indexPath.row)
+                dataDictionary["Inbox"] = inboxEmails
+            
+                var trashEmails = dataDictionary["Trash"]
+                trashEmails?.append(deletedEmail!)
+                dataDictionary["Trash"] = trashEmails
+            
+            default:
+                print("invalid case")
+        }
+    }
+    
     
     // below variable is intended to be used when pulling the variable indexPath from RootTVC.
     var indexPath: IndexPath? = nil
@@ -132,6 +159,8 @@ class MenuTVC: UITableViewController{
         destVC.menuDelegate = self.delegate
         
         destVC.selectedEmailKey = selectedRow
+        
+        destVC.dataUpdateDelegate = self
         
         // Set up a conditional to only have this edit button pop up for the inbox type.
         var inboxConditional = false
